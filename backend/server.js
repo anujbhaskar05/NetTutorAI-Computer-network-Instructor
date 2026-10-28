@@ -23,7 +23,7 @@ app.post("/api/chat", async (req, res, next) => {
     if (!process.env.GEMINI_API_KEY) return res.status(503).json({ error: "Chatbot AI is not configured." });
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const response = await ai.models.generateContent({
-      model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+      model: process.env.GEMINI_MODEL || "gemini-3.5-flash-lite",
       contents: message,
       config: { systemInstruction: "You are NetTutor AI, a friendly Computer Networks teacher.Rules:- Use simple English.- Keep answers between 50 and 100 words.- Use short headings and bullet points.-Explain concepts for beginners.- Give one simple example when useful.- Avoid long paragraphs and unnecessary details.- For exam questions, give short, exam-ready answers.- Answer only Computer Networks questions." }
     });
