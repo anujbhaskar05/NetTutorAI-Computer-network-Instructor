@@ -12,7 +12,7 @@ const app = express();
 const PORT = Number(process.env.PORT || 5000);
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://net-tutor-ai-frontend-nlv7-two.vercel.app",
+  "https://net-tutor-ai-frontend-ruby.vercel.app",
   ...(process.env.CLIENT_ORIGIN || "")
     .split(",")
     .map((origin) => origin.trim().replace(/\/$/, ""))
